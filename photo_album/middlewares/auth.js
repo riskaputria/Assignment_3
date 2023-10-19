@@ -17,6 +17,7 @@ const authentication = async (req, res, next) => {
 
     // verify token
     const decode = verifyToken(token);
+    // const decode = verifyToken(token?.(" ")?.[1]);
 
     const userData = await User.findOne({
       where: {
@@ -40,7 +41,7 @@ const authentication = async (req, res, next) => {
 
     next();
   } catch (error) {
-    res.status(error.code || 500).json(error.message);
+    res.status(error.code || 500).json(error);
   }
 };
 
