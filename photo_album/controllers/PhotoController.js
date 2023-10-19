@@ -35,7 +35,7 @@ class photoController {
       }
       res.status(200).json(data);
     } catch (error) {
-      res.status(error.code || 500).json(error.message);
+      res.status(error.code || 500).json(error);
     }
   }
 
